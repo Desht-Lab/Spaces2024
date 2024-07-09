@@ -1,90 +1,69 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entity Spaces 2024</title>
+    <title>ADB 2022 Spaces</title>
     <link rel="stylesheet" href="https://desht-lab.github.io/Gotham/stylesheet.css">
     <style>
         body {
-            font-family: Gotham;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5; /* Neutral background */
-        }
-        .header {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .containers {
-            display: flex;
-            flex-wrap: wrap; /* Allows wrapping of containers */
-            align-items: flex-start; /* Align containers to the top */
-            justify-content: center; /* Center containers horizontally */
-            padding: 20px;
-            width: 100%; 
-            gap: 20px; /* Add gap between containers */
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
         .container {
-            text-align: left;
-            padding: 20px;
-            background-color: white; /* Keeps the container neutral */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            width: calc(50% - 40px); /* Set width to 50% minus the gap */
-            max-width: 450px; /* Ensure a maximum width */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            max-width: 600px;
+            margin: 0 auto;
         }
-        h1 {
-            color: #376c8a; /* Color for headings */
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #376c8a; /* Color for headings */
+        .dropdown {
             margin-bottom: 20px;
         }
-        .link {
-            display: block; /* Change to block to stack vertically */
-            margin: 10px auto; /* Center align the links */
-            padding: 10px 15px;
-            background-color: #376c8a; /* Background color for links */
-            color: #f3cca1; /* Text color for links */
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-            width: 95%; /* Ensure the width is consistent */
-            text-align: center; /* Center the text */
+        label {
+            font-size: 1.2em;
+            color: #444;
         }
-        .link:hover {
-            background-color: #f3cca1; /* Background color on hover */
-            color: #376c8a; /* Text color on hover */
+        select {
+            font-size: 1em;
+            padding: 0.5em;
+            font-family: Arial, sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #444444;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="28" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 50%;
+            width: 330px;
         }
-        .logo {
-            width: 150px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-            margin-top: 20px; /* Add some spacing above the logo */
+        iframe {
+            width: 100%;
+            border: none;
+            height: 100%; /* Adjust height as needed */
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <a href="https://www.desht.org/lab"><img src="Desht_lab_blue.png" alt="Desht Lab Logo" class="logo"> </a>
-        <h1>Пространства районов и индустрий 2024</h1>
-    </div>
-    <div class="containers">
-        <div class="container">
-            
-            
-            <a class="link" href="region_space.html" target="_blank">Районы</a>
-            <a class="link" href="industry_space.html" target="_blank">Индустрии</a>
-            
+        <div class="dropdown">
+            <label for="links">Выберите пространство:</label>
+            <select id="links" onchange="updateIframe()">
+                <option value="https://desht-lab.github.io/ADB2022/region_space.html"></option>
+                <option value="https://desht-lab.github.io/ADB2022/countries_gva_corr.html">Страны по корреляции производства</option>
+                <option value="https://desht-lab.github.io/ADB2022/ind_cons_maxProx.html">Индустрии по проксимити потребления</option>
+                <option value="https://desht-lab.github.io/ADB2022/ind_prod_maxProx.html">Индустрии по проксимити производства</option>
+            </select>
         </div>
-       
-             
-    </div>
-    
+        <iframe id="iframe" src="https://desht-lab.github.io/ADB2022/countries_cons_corr.html"></iframe>
+   
 
-</body></html>
+    <script>
+        function updateIframe() {
+            var select = document.getElementById('links');
+            var iframe = document.getElementById('iframe');
+            iframe.src = select.value;
+        }
+    </script>
+</body>
+</html>
