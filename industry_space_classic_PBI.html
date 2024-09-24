@@ -3,15 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>Bokeh Plot</title>
-    <style>
+  
+      <style>
       html, body {
         box-sizing: border-box;
         display: flow-root;
         height: 100%;
         margin: 0;
         padding: 0;
+        touch-action: pan-x pan-y;
       }
+      a {
+            display: inline-block; /* Allows applying padding and margin */
+            padding: 5px 10px; /* Padding inside the button */
+            margin: 10px; /* Space around the button */
+            text-align: center; /* Center the text inside the button */
+            text-decoration: none; /* Remove underline from the link */
+            color: white; /* Text color */
+            background-color: #007BFF; /* Background color */
+            border: 1px solid transparent; /* Optional border */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+        }
+        a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            color: #fff; /* Keep text color the same (or change if desired) */
+        }
     </style>
+
     <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.1.min.js"></script>
     <script type="text/javascript">
@@ -19,6 +38,7 @@
     </script>
   </head>
   <body>
+    <a href="https://desht-lab.github.io/Spaces2024/industry_space_classic_PBI.html">See in web</a>
     <div id="e36d2ee4-93e8-4dc2-a1b2-15bf4581118e" data-root-id="p1073" style="display: contents;"></div>
   
     <script type="application/json" id="p1075">
